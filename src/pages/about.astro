@@ -1,14 +1,50 @@
-<a href="/">Home</a>
-<a href="/about">About</a>
-<a href="/blog">Blog</a>
+---
+const pageTitle = "About Me";
 
-<h1>About Me</h1>
-<h2>... and my obsessive need to challenge myself everyday.</h2>
+const identity = {
+   name: "Shrek",
+   occupation: "Personal Body Gaurd",
+   country: "Near Lands",
+   skinColor:"green",
+   hobbies: ["scaring residents","making eyeball soup"]
+};
 
-<p>
-  I have a problem. I can't stop learning. The more I learn the less knowledgeable I feel, and the more I need to learn.
-</p>
+const skills = ["cooking flesh", "candlier"];
+const hungry = true;
+---
 
-<p>
-   I'll track my journey here along with my love for different design aesthetics. Also I'm looking for work.
-</p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/blog">Blog</a>
+
+    <h1>{pageTitle}</h1>
+    <h2>... and my obsessive need to challenge myself everyday.</h2>
+
+    <p>
+      The more I learn the less knowledgeable I feel, and the more I need to learn.
+    </p>
+
+    {hungry === true ? <p>I'm feeling pretty hungry right now, wish I had a job that'd pay me.</p> : <p>hunger is not in my vocabulary.</p>}
+
+    <p>
+      I'll track my journey here along with my love for different design
+      aesthetics. Also I'm looking for work.
+    </p>
+    <p>My name is {identity.name}</p>
+    <p>My skills are: </p>
+    <ul>
+      {skills.map(s => <li>{s}</li>)}
+    </ul>
+    <p>My hobbies are: </p>
+    <ul>
+      {identity.hobbies.map(s => <li>{s}</li>)}
+    </ul>
+  </body>
+</html>
